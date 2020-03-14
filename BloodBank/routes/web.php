@@ -19,4 +19,16 @@ Auth::routes();
 
 Route::get('/user', 'HomeController@index')->name('user');
 
+Route::get('/user', 'HomeController@index')->name('user.donor_registration');
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/admin', 'AdminController@index')->name('admin');
