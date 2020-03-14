@@ -8,6 +8,6 @@ class Donor extends Model
 {
     //
     protected $fillable = [
-        'name','bloodgroup','contactno','address', 'mime', 'original_filename', 'filename'
+        'name', 'bloodgroup', 'contactno', 'address', 'mime', 'original_filename', 'filename'
     ];
 }
