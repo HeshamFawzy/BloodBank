@@ -49,7 +49,8 @@
 
                             <div class="form-group">
                                 <input style="float: right;" type="submit" class="btn btn-primary float-right" name="submit" value="Donate"/>
-                            </div>
+							</div>
+							
                         </form>
                     </div>
                 </div>
