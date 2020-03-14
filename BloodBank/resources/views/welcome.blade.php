@@ -46,14 +46,14 @@
             }
 
             .title {
-                font-size: 75px;
-                color: white;
+                font-size: 60px;
+                color: yellow;
             }
 
             .links > a {
-                color: #636b6f;
+                color: yellow;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 22px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
