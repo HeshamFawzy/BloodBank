@@ -65,4 +65,16 @@ class HomeController extends Controller
         $data = DB::table('donors')->where('bloodgroup' , $request->input('bloodgroup'))->get();
         return view('user.donor',array('options' => $options, 'data' => $data ));
     }
+
+    public function bank()
+    {
+        $options = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-',];
+        $data = DB::select('select Count(id) as Stock, bloodgroup from donors group by bloodgroup order by bloodgroup');
+        return view('user.bank',array('options' => $options, 'data' => $data ));
+    }
+
+    public function bankp(Request $request)
+    {
+        
+    }
 }

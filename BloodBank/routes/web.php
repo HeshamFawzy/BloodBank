@@ -25,7 +25,9 @@ Route::get('/donor', 'HomeController@donor')->name('user.donor');
 
 Route::post('/donor_p/{id}', 'HomeController@donorp')->name('user.donor_p');
 
+Route::get('/bank', 'HomeController@bank')->name('user.bank');
 
+Route::post('/bank_p/{id}', 'HomeController@bankp')->name('user.bank_p');
 
 
 
