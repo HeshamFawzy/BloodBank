@@ -43,14 +43,14 @@
 
                             <div class="form-group">
                                 <label for="image" class="h4">Image :</label>
-                                <input type="file" class="form-control" name="image"
+                                <input id="upload" type="file" class="form-control" name="image"
                                     accept="image/gif, image/jpeg, image/png" required="" />
-                            </div>
+							</div>
 
                             <div class="form-group">
                                 <input style="float: right;" type="submit" class="btn btn-primary float-right" name="submit" value="Donate"/>
 							</div>
-							
+
                         </form>
                     </div>
                 </div>
@@ -62,10 +62,32 @@
                             Registration</a><a class="list-group-item" href="#"><i
                                 class="fas fa-hands-helping fa-fw"></i> Donor Search</a>
                         <a class="list-group-item" href="#"><i class="fa fa-bank fa-fw"></i> Blood Bank</a>
-                    </div>
+					</div>
+					<img id="img" src="#" alt="your image" width="100%" onerror="this.src='fallback-img.jpg'"/>
                 </section>
-            </div>
+			</div>
         </div>
     </div>
 </div>
+<script>
+	$(function () {
+			$('#upload').change(function () {
+				var input = this;
+				var url = $(this).val();
+				var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+				if (input.files && input.files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						$('#img').attr('src', e.target.result);
+					}
+					reader.readAsDataURL(input.files[0]);
+				}
+				else {
+					$('#img').attr('src', '/assets/no_preview.png');
+				}
+			});
+
+		});
+</script>
 @endsection
