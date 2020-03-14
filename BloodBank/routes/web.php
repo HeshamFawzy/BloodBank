@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/user', 'HomeController@index')->name('user');
+Route::get('/donate', 'HomeController@donate')->name('user.donate');
 
-Route::post('/donate', 'HomeController@donate')->name('user.donor_registration');
+Route::post('/donate_p', 'HomeController@donatep')->name('user.donate_p');
 
 
 

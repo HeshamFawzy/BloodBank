@@ -29,12 +29,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function donate()
     {
         return view('user.home');
     }
 
-    public function donate(Request $request)
+    public function donatep(Request $request)
     {
         $image = $request->file('image');
         $extension = $image->getClientOriginalExtension();
