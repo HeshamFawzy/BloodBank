@@ -58,8 +58,8 @@
 
                             <div class="col-md-6">
                                 <select id="gender" class="form-control" name="gender" required autofocus>
-                                  <option value="male">Male</option>
-                                  <option value="female">Female</option>
+                                  <option value="0">Male</option>
+                                  <option value="1">Female</option>
                                 </select>
 
                                 @if ($errors->has('gender'))
