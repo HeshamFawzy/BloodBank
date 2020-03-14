@@ -23,7 +23,7 @@ Route::post('/donate_p', 'HomeController@donatep')->name('user.donate_p');
 
 Route::get('/donor', 'HomeController@donor')->name('user.donor');
 
-
+Route::post('/donor_p/{id}', 'HomeController@donorp')->name('user.donor_p');
 
 
 
