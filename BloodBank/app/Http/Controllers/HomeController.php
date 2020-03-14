@@ -61,8 +61,8 @@ class HomeController extends Controller
 
     public function donorp(Request $request)
     {
-       $data = DB::table('donors')->where('bloodgroup' , $request->input('bloodgroup'))->get();
-
-       dd($data);
+        $options = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-',];
+        $data = DB::table('donors')->where('bloodgroup' , $request->input('bloodgroup'))->get();
+        return view('user.donor',array('options' => $options, 'data' => $data ));
     }
 }
