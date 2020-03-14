@@ -63,7 +63,7 @@
                                 class="fas fa-hands-helping fa-fw"></i> Donor Search</a>
                         <a class="list-group-item" href="#"><i class="fa fa-bank fa-fw"></i> Blood Bank</a>
 					</div>
-					<img id="img" src="#" alt="your image" width="100%" onerror="this.src='fallback-img.jpg'"/>
+					<img id="img" src="#" alt="Uploaded Image" width="100%"/>
                 </section>
 			</div>
         </div>
