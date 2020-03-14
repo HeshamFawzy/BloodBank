@@ -21,7 +21,7 @@ Route::get('/donate', 'HomeController@donate')->name('user.donate');
 
 Route::post('/donate_p', 'HomeController@donatep')->name('user.donate_p');
 
-
+Route::get('/donor', 'HomeController@donor')->name('user.donor');
 
 
 
