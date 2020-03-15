@@ -12,6 +12,8 @@ use File;
 
 use App\Donor;
 
+use App\Reques;
+
 class HomeController extends Controller
 {
     /**
@@ -75,6 +77,12 @@ class HomeController extends Controller
 
     public function bankp(Request $request)
     {
-        
+        $Reques = Reques::create([
+            'user_id' =>   Auth()->user()->id,
+            'bloodgroup' => $request->input('bloodgroup'),
+        ]);
+        $options = ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-',];
+        $data = DB::select('select Count(id) as Stock, bloodgroup from donors group by bloodgroup order by bloodgroup');
+        return view('user.bank',array('options' => $options, 'data' => $data ));
     }
 }
