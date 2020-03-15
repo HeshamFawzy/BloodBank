@@ -45,9 +45,13 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
+                        <a class="nav-link" href="{{ url('/requests') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-hands-helping fa-fw"></i></div>
+                            Blood Requests
+                        </a>
                         <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            <div class="sb-nav-link-icon"><i class="fas fa-hands-helping fa-fw"></i></div>
+                            Blood Transactions
                         </a>
                     </div>
                 </div>
@@ -57,7 +61,34 @@
             <main>
                 <div class="container-fluid">
                     <div class="row">
-                            //////////////////////////////////////////////////////////
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>User Request Name</th>
+                                    <th>Blood Group</th>
+                                    <th>email</th>
+                                    <th>Contact_No.</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Created_at</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if($data ?? '')
+                                @foreach($data as $row)
+                                <tr>
+                                    <th>{{$row->firstname}}</th>
+                                    <td>{{$row->bloodgroup}}</td>
+                                    <td>{{$row->email}}</td>
+                                    <td>{{$row->contactno}}</td>
+                                    <td>{{$row->city}}</td>
+                                    <td>{{$row->address}}</td>
+                                    <td>{{$row->created_at}}</td>
+                                </tr>
+                                @endforeach
+                                @endif
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </main>
