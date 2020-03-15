@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function search(Request $request)
     {
         $data = Reques::join('users', 'users.id', '=', 'reques.user_id')
-        ->where('users.email', $request->input('search'))
+        ->where('users.email', 'like' , '%'.$request->input('search').'%')
         ->orderBy('reques.created_at', 'desc')
         ->get();
         return view('admin.requests')->with('data', $data);
