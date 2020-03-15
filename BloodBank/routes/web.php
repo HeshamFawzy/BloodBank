@@ -34,3 +34,5 @@ Route::post('/bank_p/{id}', 'HomeController@bankp')->name('user.bank_p');
 
 
 Route::get('/requests', 'AdminController@requests')->name('admin.requests');
+
+Route::get('/transactions', 'AdminController@transactions')->name('admin.transactions');

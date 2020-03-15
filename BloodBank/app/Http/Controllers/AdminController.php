@@ -14,7 +14,12 @@ class AdminController extends Controller
         $data = Reques::join('users', 'users.id', '=', 'reques.user_id')
         ->orderBy('reques.created_at', 'desc')
         ->get();
-        return view('admin.home')->with('data' , $data);
+        return view('admin.requests')->with('data' , $data);
+    }
+
+    public function transactions()
+    {
+        return view('admin.transactions');
     }
 
 }
