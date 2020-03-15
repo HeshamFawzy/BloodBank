@@ -23,7 +23,7 @@
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="post" action="{{ url('/search/{email}')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search By Email Or Contact_No." aria-label="Search"
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search"
                     aria-describedby="basic-addon2" name="search" style="width: 300px;"/>
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
