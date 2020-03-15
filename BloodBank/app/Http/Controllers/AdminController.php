@@ -27,6 +27,7 @@ class AdminController extends Controller
     {
         $data = Reques::join('users', 'users.id', '=', 'reques.user_id')
         ->where('users.email', 'like' , '%'.$request->input('search').'%')
+        ->orWhere('users.contactno', 'like' , $request->input('search'))
         ->orderBy('reques.created_at', 'desc')
         ->get();
         return view('admin.requests')->with('data', $data);
