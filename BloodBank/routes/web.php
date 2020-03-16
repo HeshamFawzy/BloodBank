@@ -17,22 +17,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/donate', 'HomeController@donate')->name('user.donate');
+Route::group(['middleware' => ['auth' , 'user']], function () {
 
-Route::post('/donate_p', 'HomeController@donatep')->name('user.donate_p');
+    Route::get('/donate', 'HomeController@donate')->name('user.donate');
 
-Route::get('/donor', 'HomeController@donor')->name('user.donor');
+    Route::post('/donate_p', 'HomeController@donatep')->name('user.donate_p');
 
-Route::post('/donor_p/{id}', 'HomeController@donorp')->name('user.donor_p');
+    Route::get('/donor', 'HomeController@donor')->name('user.donor');
 
-Route::get('/bank', 'HomeController@bank')->name('user.bank');
+    Route::post('/donor_p/{id}', 'HomeController@donorp')->name('user.donor_p');
 
-Route::post('/bank_p/{id}', 'HomeController@bankp')->name('user.bank_p');
+    Route::get('/bank', 'HomeController@bank')->name('user.bank');
 
+    Route::post('/bank_p/{id}', 'HomeController@bankp')->name('user.bank_p');
+});
 
+Route::group(['middleware' => ['auth' , 'admin']], function () {
 
+    Route::get('/requests', 'AdminController@requests')->name('admin.requests');
 
-
-Route::get('/requests', 'AdminController@requests')->name('admin.requests');
-
-Route::post('/search/{email}', 'AdminController@search')->name('admin.search');
+    Route::post('/search/{email}', 'AdminController@search')->name('admin.search');
+});

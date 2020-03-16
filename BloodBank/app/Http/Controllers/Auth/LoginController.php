@@ -29,7 +29,7 @@ class LoginController extends Controller
     {
         if (auth()->user()->role == 'admin') {
             return '/requests';
-        } else if (auth()->user()->role == 'guest'){
+        } else if (auth()->user()->role == 'user'){
             return '/donate';
         }
     }
